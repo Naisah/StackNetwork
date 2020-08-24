@@ -32,7 +32,7 @@ client.on('message', message =>{
         message.channel.send('play.stacknetwork.net');
 
     if (command === 'vote')
-        message.channel.send('1. https://minecraft-server-list.com/server/465627/vote/ || 2. https://www.planetminecraft.com/server/stacknetwork/vote/' )
+        message.channel.send('1. https://minecraft-server-list.com/server/465627/vote/ |||| 2. https://www.planetminecraft.com/server/stacknetwork/vote/' )
 
 
 
