@@ -31,6 +31,13 @@ client.on('message', message =>{
     if(command === 'server')
         message.channel.send('play.stacknetwork.net');
 
+    if (command === 'vote')
+        message.channel.send('1. https://minecraft-server-list.com/server/465627/vote/' )
+
+
+
+
+
     if (command === 'Embed') {
         client.commands.get('Embed').execute(message, args);
     } 
