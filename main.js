@@ -28,7 +28,7 @@ client.on('message', message =>{
     
     if(command === 'store'){
         client.commands.get('store.stacknetwork.net');
-    }
+    
     if(command === 'server')
         message.channel.send('play.stacknetwork.net');
 
@@ -40,7 +40,7 @@ client.on('message', message =>{
     } 
     
 
-})
+}})
 
 client.login(process.env.token);
 
