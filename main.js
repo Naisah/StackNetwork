@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '/' ;
 const fs = require('fs');
-const embed = new MessageEmbed()
+const embed = new Discord.MessageEmbed()
 
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
