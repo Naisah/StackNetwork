@@ -26,19 +26,13 @@ client.on('message', message =>{
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
     
-    if(command === 'store'){
-        client.command.get('store').execute(msg, args);
-    }else if(command == 'server'){
-        client.command.get('server').execute(msg, args);
-    }else if (command == 'vote'){
-        client.command.get('vote').execute(msg, args);
-    }else if (command == 'ip'){
-        client.command.get('ip').execute(msg, args);
-    }else if (command == 'Embed'){
-        client.commands.get('Embed').execute(message, args);
-    } 
+    if(command === 'store') {
+        client.commands.get('store').execute(msg, args);   
+      } else if(command == 'vote') {
+        client.commands.get('vote').execute(msg, args);
+      } 
     
-
+      
 })
 
 client.login(process.env.token);
