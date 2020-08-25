@@ -26,15 +26,14 @@ client.on('message', message =>{
     const command = args.shift().toLowerCase();
     
     if(command === 'store'){
-        message.channel.send('http://store.stacknetwork.net/');
-    }
-    if(command === 'server')
-        message.channel.send('play.stacknetwork.net');
-
-    if (command === 'vote')
-        message.channel.send(' 1.https://minecraft-server-list.com/server/465627/vote/ 2.https://www.planetminecraft.com/server/stacknetwork/vote/ 3.https://minecraft-mp.com/server/265382/vote/ 4.https://www.serverpact.com/vote-44084 5.https://minecraftservers.org/vote/591911 6.https://serverlist101.com/server/2003/vote/ 7.https://topg.org/Minecraft/in-612558' )
-
-    if (command === 'Embed') {
+        client.command.get('store').execute(msg, args);
+    }else if(command === 'server'){
+        client.command.get('server').execute(msg, args);
+    }else if (command === 'vote'){
+        client.command.get('vote').execute(msg, args);
+    }else if (command === 'ip'){
+        client.command.get('ip').execute(msg, args);
+    }else if (command === 'Embed'){
         client.commands.get('Embed').execute(message, args);
     } 
     
