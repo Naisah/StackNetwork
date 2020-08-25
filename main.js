@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const prefix = '/' ;
 const fs = require('fs');
 const embed = new Discord.MessageEmbed()
+
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for(const file of commandFiles){
@@ -27,13 +28,13 @@ client.on('message', message =>{
     
     if(command === 'store'){
         client.command.get('store').execute(msg, args);
-    }else if(command === 'server'){
+    }else if(command == 'server'){
         client.command.get('server').execute(msg, args);
-    }else if (command === 'vote'){
+    }else if (command == 'vote'){
         client.command.get('vote').execute(msg, args);
-    }else if (command === 'ip'){
+    }else if (command == 'ip'){
         client.command.get('ip').execute(msg, args);
-    }else if (command === 'Embed'){
+    }else if (command == 'Embed'){
         client.commands.get('Embed').execute(message, args);
     } 
     
