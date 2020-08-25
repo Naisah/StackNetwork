@@ -21,7 +21,7 @@ module.export = {
   .setTimestamp()
   .setFooter('Join our server now! play.stacknetwork.net');
   
-  channel.send(exampleEmbed);
+  message.channel.send(exampleEmbed);
 
 }}
       
