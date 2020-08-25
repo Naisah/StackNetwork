@@ -25,7 +25,6 @@ module.exports = {
     }
 }
 
-
 module.exports = {
     name: 'ip',
     description: "this is a ping command!",
