@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '/' ;
 const fs = require('fs');
-const embed = new Discord.MessageEmbed()
+const embed = new MessageEmbed()
 
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
@@ -27,20 +27,18 @@ client.on('message', message =>{
     const command = args.shift().toLowerCase();
     
     if(command === 'store'){
-        message.channel.send('http://store.stacknetwork.net/');
-    }
-    if(command === 'server')
-        message.channel.send('play.stacknetwork.net');
-
-    if (command === 'vote')
-        message.channel.send(' 1.https://minecraft-server-list.com/server/465627/vote/ 2.https://www.planetminecraft.com/server/stacknetwork/vote/ 3.https://minecraft-mp.com/server/265382/vote/ 4.https://www.serverpact.com/vote-44084 5.https://minecraftservers.org/vote/591911 6.https://serverlist101.com/server/2003/vote/ 7.https://topg.org/Minecraft/in-612558' )
-
-    if (command === 'Embed') {
-        client.commands.get('Embed').execute(message, args);
+        client.commands.get('store').execute(msg, args);
+    }else if(command === 'server'){
+        client.commands.get('server').execute(msg, args);
+    }else if (command === 'vote'){
+        client.commands.get('vote').execute(msg, args);
+    }else if (command === 'Embed'){
+        client.commands.get('Embed').execute(msg, args);
+    }else if(command === 'ip'){
+        client.commands.get('ip').execute(msg, args);
     } 
     
-
-})
+});
 
 client.login(process.env.token);
 
