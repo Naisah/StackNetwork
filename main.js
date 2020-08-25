@@ -3,7 +3,6 @@ const client = new Discord.Client();
 const prefix = '/' ;
 const fs = require('fs');
 const embed = new Discord.MessageEmbed()
-
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for(const file of commandFiles){
@@ -27,8 +26,8 @@ client.on('message', message =>{
     const command = args.shift().toLowerCase();
     
     if(command === 'store'){
-        client.commands.get('store.stacknetwork.net');
-    
+        message.channel.send('http://store.stacknetwork.net/');
+    }
     if(command === 'server')
         message.channel.send('play.stacknetwork.net');
 
@@ -40,7 +39,7 @@ client.on('message', message =>{
     } 
     
 
-}})
+})
 
 client.login(process.env.token);
 
